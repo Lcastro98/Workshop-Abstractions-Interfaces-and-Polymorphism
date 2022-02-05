@@ -10,17 +10,26 @@ import java.util.Calendar;
  *
  * @author lcast
  */
-public class MannedSpacecraft extends Spacecraft {
-    
-    public int crewCapacity;
+public class LaunchVehicle extends Spacecraft{
 
-    public MannedSpacecraft(int crewCapacity, String name, Calendar launchDate, float weight, float size, String propeller, float speed, boolean activated, String location) {
+    public String fuel;
+    public String power;
+    public float payloadCapacity;
+    public boolean reusable;
+
+    public LaunchVehicle(String fuel, float payloadCapacity, boolean reusable, String name, Calendar launchDate, float weight, float size, String propeller, float speed, boolean activated, String location) {
         super(name, launchDate, weight, size, propeller, speed, activated, location);
-        this.crewCapacity = crewCapacity;
+        this.fuel = fuel;
+        this.payloadCapacity = payloadCapacity;
+        this.reusable = reusable;
     }
 
-    public void desactivateAutopilot(){
+
+    
+    public void uncoupling() {
+    
     }
+    
     
     @Override
     public boolean isActivated() {
@@ -36,6 +45,5 @@ public class MannedSpacecraft extends Spacecraft {
     public void stop() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
     
 }
