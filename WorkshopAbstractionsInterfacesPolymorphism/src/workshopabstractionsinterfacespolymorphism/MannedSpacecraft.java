@@ -34,6 +34,14 @@ public class MannedSpacecraft extends Spacecraft {
     }
 
     /**
+     * Constructor con los parametros específicos de la clase.
+     * @param crewCapacity 
+     */
+    public MannedSpacecraft(int crewCapacity) {
+        this.crewCapacity = crewCapacity;
+    }
+
+    /**
      * Método que permite notificar cuando el piloto automático de la nave se desactiva.
      * @return 
      */
@@ -74,7 +82,7 @@ public class MannedSpacecraft extends Spacecraft {
     public String toString() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
         String strDate = dateFormat.format(launchDate.getTime());
-        return "Información de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + strDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nCapacidad de personal: " + crewCapacity + "\n";
+        return "\nInformación de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + strDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nCapacidad de personal: " + crewCapacity + "\n";
     }
 
 }

@@ -7,6 +7,7 @@ package workshopabstractionsinterfacespolymorphism;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Scanner;
 
 /**
  * La clase LaunchVehicle define los atributos (características) de un vehículo lanzadera y sus métodos (comportamientos).
@@ -18,7 +19,7 @@ public class LaunchVehicle extends Spacecraft{
     public String fuel;
     public float payloadCapacity;
     public boolean reusable;
-
+        
     /**
      * Constructor: permite crear una instancia de la clase LaunchVehicle.
      * @param fuel
@@ -34,6 +35,18 @@ public class LaunchVehicle extends Spacecraft{
      */
     public LaunchVehicle(String fuel, float payloadCapacity, boolean reusable, String name, Calendar launchDate, float weight, float size, String propeller, boolean activated, String location) {
         super(name, launchDate, weight, size, propeller, activated, location);
+        this.fuel = fuel;
+        this.payloadCapacity = payloadCapacity;
+        this.reusable = reusable;
+    }
+    
+    /**
+     * Constructor con los parametros específicos de la clase.
+     * @param fuel
+     * @param payloadCapacity
+     * @param reusable 
+     */
+    public LaunchVehicle(String fuel, float payloadCapacity, boolean reusable) {
         this.fuel = fuel;
         this.payloadCapacity = payloadCapacity;
         this.reusable = reusable;
@@ -80,6 +93,6 @@ public class LaunchVehicle extends Spacecraft{
     public String toString() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
         String strDate = dateFormat.format(launchDate.getTime());
-        return "Información de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + strDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nCombustible: " + fuel + "\nCapacidad de carga útil: " + payloadCapacity + "\n¿Es reusable?: " + (reusable==true?"Sí":"No") +"\n";
+        return "\nInformación de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + strDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nCombustible: " + fuel + "\nCapacidad de carga útil: " + payloadCapacity + "\n¿Es reusable?: " + (reusable==true?"Sí":"No") +"\n";
     }
 }

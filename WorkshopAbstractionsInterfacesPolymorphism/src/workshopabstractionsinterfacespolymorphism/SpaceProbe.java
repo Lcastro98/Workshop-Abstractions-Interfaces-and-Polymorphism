@@ -32,6 +32,16 @@ public class SpaceProbe extends Spacecraft implements IUnmannedSpacecraft{
         super(name, launchDate, weight, size, propeller, activated, location);
         this.cameraResolution = cameraResolution;
     }
+
+    /**
+     * Constructor con los parametros específicos de la clase.
+     * @param cameraResolution 
+     */
+    public SpaceProbe(float cameraResolution) {
+        this.cameraResolution = cameraResolution;
+    }
+    
+    
     
     /**
      * Indica cuando la sonda toma la muestra deseada.
@@ -94,6 +104,6 @@ public class SpaceProbe extends Spacecraft implements IUnmannedSpacecraft{
     public String toString() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
         String strDate = dateFormat.format(launchDate.getTime());
-        return "Información de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + strDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nResolución de cámara: " + cameraResolution + "\n";
+        return "\nInformación de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + strDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nResolución de cámara: " + cameraResolution + "\n";
     }
 }

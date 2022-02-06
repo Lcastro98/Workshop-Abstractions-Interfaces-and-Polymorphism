@@ -34,6 +34,14 @@ public class ArtificialSatellite extends Spacecraft implements IUnmannedSpacecra
     }
     
     /**
+     * Constructor con los parametros específicos de la clase.
+     * @param orbitalHeight 
+     */
+    public ArtificialSatellite(double orbitalHeight) {
+        this.orbitalHeight = orbitalHeight;
+    }
+    
+    /**
      * Método que permite indicar cuando el satelite recibe la información requerida.
      * @return 
      */
@@ -94,7 +102,7 @@ public class ArtificialSatellite extends Spacecraft implements IUnmannedSpacecra
     public String toString() { 
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
         String strDate = dateFormat.format(launchDate.getTime());  
-        return "Información de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + strDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nAltura orbital: " + orbitalHeight + "\n";
+        return "\nInformación de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + strDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nAltura orbital: " + orbitalHeight + "\n";
     }
 
 }

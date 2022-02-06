@@ -34,6 +34,14 @@ public class UnmannedTransport extends Spacecraft implements IUnmannedSpacecraft
     }
 
     /**
+     * Constructor con los parametros específicos de la clase.
+     * @param loadCapacity 
+     */
+    public UnmannedTransport(float loadCapacity) {
+        this.loadCapacity = loadCapacity;
+    }
+
+    /**
      * Método que permite indicar cuando la nave transportadora se acopla en el lugar deseado.
      * @return 
      */
@@ -94,7 +102,7 @@ public class UnmannedTransport extends Spacecraft implements IUnmannedSpacecraft
     public String toString() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
         String strDate = dateFormat.format(launchDate.getTime());
-        return "Información de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + strDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nCapacidad de carga: " + loadCapacity + "\n";
+        return "\nInformación de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + strDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nCapacidad de carga: " + loadCapacity + "\n";
     }
     
 }
