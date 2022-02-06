@@ -4,6 +4,7 @@
  */
 package workshopabstractionsinterfacespolymorphism;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
 /**
@@ -17,7 +18,7 @@ public class WorkshopAbstractionsInterfacesPolymorphism {
      */
     public static void main(String[] args) {
         
-       
+        ArrayList<Spacecraft> SpacecraftList = new ArrayList<>();
         int add;
         do
         {
@@ -52,15 +53,46 @@ public class WorkshopAbstractionsInterfacesPolymorphism {
                     int reusable = Integer.parseInt(s.nextLine());
                     
                     LaunchVehicle lv = new LaunchVehicle(fuel, payloadCapacity, (reusable == 0?false:true), name, launchDate, weight, size, propeller, (activated == 0?false:true), location);
-                
-                case 2:
+                    SpacecraftList.add(lv);
+                    break;
                     
+                case 2:
+                    System.out.println("Por favor indique la altura orbital: ");
+                    double orbitalHeight = Double.parseDouble(s.nextLine());
+                    
+                    ArtificialSatellite as = new ArtificialSatellite(orbitalHeight, name, launchDate, weight, size, propeller, (activated == 0?false:true), location);
+                    SpacecraftList.add(as);
+                    break;
+                    
+                case 3:
+                    System.out.println("Por favor indique la capacidad de carga de la nave: ");
+                    float loadCapacity = Float.parseFloat(s.nextLine());
+                    
+                    UnmannedTransport ut = new UnmannedTransport(loadCapacity, name, launchDate, weight, size, propeller, (activated == 0?false:true), location);
+                    SpacecraftList.add(ut);
+                    break;
+                    
+                case 4:
+                    System.out.println("Por favor indique la resolución de la cámara: ");
+                    float cameraResolution = Float.parseFloat(s.nextLine());
+                    
+                    SpaceProbe sp = new SpaceProbe(cameraResolution, name, launchDate, weight, size, propeller, (activated == 0?false:true), location);
+                    SpacecraftList.add(sp);
+                    break;
+                    
+                case 5:
+                    System.out.println("Por favor indique la capacidad de personal de la nave: ");
+                    int crewCapacity = Integer.parseInt(s.nextLine());
+                    
+                    MannedSpacecraft ms = new MannedSpacecraft(crewCapacity, name, launchDate, weight, size, propeller, (activated == 0?false:true), location);
+                    SpacecraftList.add(ms);
+                    break;
             }
             System.out.println("Si desea agregar otra nave por favor digite 1, de lo contrario digite 0: ");
             add = Integer.parseInt(s.nextLine());
         }
         while (add != 0);
-        System.out.println("");
+        System.out.println(SpacecraftList);
     }
     
 }

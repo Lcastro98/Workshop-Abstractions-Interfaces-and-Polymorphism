@@ -44,4 +44,8 @@ public class SpaceProbe extends Spacecraft implements IUnmannedSpacecraft{
         return destination;
     }
   
+    @Override
+    public String toString() {
+        return "Información de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + launchDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nResolución de cámara: " + cameraResolution + "\n";
+    }
 }

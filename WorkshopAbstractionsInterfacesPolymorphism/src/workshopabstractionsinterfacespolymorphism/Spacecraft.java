@@ -37,4 +37,5 @@ public abstract class Spacecraft {
     }
     public abstract void launch();
     public abstract void stop();
+  
 }

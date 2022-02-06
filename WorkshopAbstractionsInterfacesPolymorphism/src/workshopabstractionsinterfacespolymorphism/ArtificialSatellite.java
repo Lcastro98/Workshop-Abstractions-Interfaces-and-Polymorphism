@@ -43,5 +43,10 @@ public class ArtificialSatellite extends Spacecraft implements IUnmannedSpacecra
     public String defineRoute(String destination) {
         return destination;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Información de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + launchDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nAltura orbital: " + orbitalHeight + "\n";
+    }
+
 }

@@ -37,4 +37,8 @@ public class LaunchVehicle extends Spacecraft{
         speed = 0;
     }
     
+    @Override
+    public String toString() {
+        return "Información de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + launchDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nCombustible: " + fuel + "\nCapacidad de carga útil: " + payloadCapacity + "\n¿Es reusable?: " + (reusable==true?"Sí":"No") +"\n";
+    }
 }

@@ -32,5 +32,9 @@ public class MannedSpacecraft extends Spacecraft {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    @Override
+    public String toString() {
+        return "Información de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + launchDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nCapacidad de personal: " + crewCapacity + "\n";
+    }
 
 }
