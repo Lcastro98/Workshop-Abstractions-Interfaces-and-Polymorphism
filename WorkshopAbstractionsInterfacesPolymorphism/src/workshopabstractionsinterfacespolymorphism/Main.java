@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
 /**
- *
- * @author lcast
+ * La clase Main permite la creación de las naves y el poder mostrar las creadas luego de finalizar el ciclo.
+ * @author Lorena Castro
  */
 public class Main {
 
@@ -23,7 +23,7 @@ public class Main {
         do
         {
             Scanner s = new Scanner(System.in);
-            System.out.println("Por favor indique el tipo de nave que desea crear. Las posibles opciones son: 1. Vehículo Lanzadera; 2. Satelite Artificial; 3. Transporte sin tripulación; 4. Sonda Espacial; 5. Nave Tripulada");
+            System.out.println("Por favor digite el número que corresponde al tipo de nave que desea crear. Las posibles opciones son:\n1. Vehículo Lanzadera.\n2. Satelite Artificial.\n3. Nave de Transporte.\n4. Sonda Espacial.\n5. Nave Tripulada");
             int Spacecraft = Integer.parseInt(s.nextLine());
             System.out.println("Por favor indique el nombre de la nave: ");
             String name = s.nextLine();
