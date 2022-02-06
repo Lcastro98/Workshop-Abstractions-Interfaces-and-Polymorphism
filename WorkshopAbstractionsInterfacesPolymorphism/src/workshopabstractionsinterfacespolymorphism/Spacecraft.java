@@ -7,8 +7,8 @@ package workshopabstractionsinterfacespolymorphism;
 import java.util.Calendar;
 
 /**
- *
- * @author lcast
+ * La clase abstracta Spacecraft define los atributo (caracteristicas) y métodos (comportamientos) que comparten los diferentes tipos de nave.
+ * @author Lorena Castro
  */
 public abstract class Spacecraft {
     
@@ -21,6 +21,22 @@ public abstract class Spacecraft {
     public boolean activated;
     public String location;
 
+    /**
+     * Constructor vacío.
+     */
+    public Spacecraft() {
+    }
+    
+    /**
+     * Constructor: permite crear una instancia de la clase Spacecraft de acuerdo a los parametros estipulados.
+     * @param name
+     * @param launchDate
+     * @param weight
+     * @param size
+     * @param propeller
+     * @param activated
+     * @param location 
+     */
     public Spacecraft(String name, Calendar launchDate, float weight, float size, String propeller, boolean activated, String location) {
         this.name = name;
         this.launchDate = launchDate;
@@ -32,9 +48,17 @@ public abstract class Spacecraft {
         this.location = location;
     }
 
+    /**
+     * Método que permite determinar si la nave se encuentra activa o no.
+     * @return 
+     */
     public boolean isActivated() {
         return activated;
     }
+    
+    /**
+     * Métodos abstractos de la clase abstracta Spacecraft.
+     */
     public abstract void launch();
     public abstract void stop();
   

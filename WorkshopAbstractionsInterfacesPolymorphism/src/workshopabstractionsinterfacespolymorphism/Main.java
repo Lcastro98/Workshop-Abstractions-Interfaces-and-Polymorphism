@@ -4,7 +4,6 @@
  */
 package workshopabstractionsinterfacespolymorphism;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
@@ -12,12 +11,12 @@ import java.util.Scanner;
  *
  * @author lcast
  */
-public class WorkshopAbstractionsInterfacesPolymorphism {
+public class Main {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) {
         
         ArrayList<Spacecraft> SpacecraftList = new ArrayList<>();
         int add;
@@ -45,7 +44,7 @@ public class WorkshopAbstractionsInterfacesPolymorphism {
             String location = s.nextLine();
             
             switch(Spacecraft){
-                case 1:
+                case 1 -> {
                     System.out.println("Por favor indique el tipo de combustible: ");
                     String fuel = s.nextLine();
                     System.out.println("Por favor indique la capacidad de carga útil: ");
@@ -55,39 +54,40 @@ public class WorkshopAbstractionsInterfacesPolymorphism {
                     
                     LaunchVehicle lv = new LaunchVehicle(fuel, payloadCapacity, (reusable == 0?false:true), name, launchDate, weight, size, propeller, (activated == 0?false:true), location);
                     SpacecraftList.add(lv);
-                    break;
+                }
                     
-                case 2:
+                case 2 -> {
                     System.out.println("Por favor indique la altura orbital: ");
                     double orbitalHeight = Double.parseDouble(s.nextLine());
                     
                     ArtificialSatellite as = new ArtificialSatellite(orbitalHeight, name, launchDate, weight, size, propeller, (activated == 0?false:true), location);
                     SpacecraftList.add(as);
-                    break;
                     
-                case 3:
+                }
+                    
+                case 3 -> {
                     System.out.println("Por favor indique la capacidad de carga de la nave: ");
                     float loadCapacity = Float.parseFloat(s.nextLine());
                     
                     UnmannedTransport ut = new UnmannedTransport(loadCapacity, name, launchDate, weight, size, propeller, (activated == 0?false:true), location);
                     SpacecraftList.add(ut);
-                    break;
+                }
                     
-                case 4:
+                case 4 -> {
                     System.out.println("Por favor indique la resolución de la cámara: ");
                     float cameraResolution = Float.parseFloat(s.nextLine());
                     
                     SpaceProbe sp = new SpaceProbe(cameraResolution, name, launchDate, weight, size, propeller, (activated == 0?false:true), location);
                     SpacecraftList.add(sp);
-                    break;
+                }
                     
-                case 5:
+                case 5 -> {
                     System.out.println("Por favor indique la capacidad de personal de la nave: ");
                     int crewCapacity = Integer.parseInt(s.nextLine());
                     
                     MannedSpacecraft ms = new MannedSpacecraft(crewCapacity, name, launchDate, weight, size, propeller, (activated == 0?false:true), location);
                     SpacecraftList.add(ms);
-                    break;
+                }
             }
             System.out.println("Si desea agregar otra nave por favor digite 1, de lo contrario digite 0: ");
             add = Integer.parseInt(s.nextLine());
