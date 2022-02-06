@@ -15,7 +15,7 @@ import java.util.Calendar;
  */
 public class MannedSpacecraft extends Spacecraft {
     
-    public int crewCapacity;
+    protected int crewCapacity;
 
     /**
      * Constructor: permite crear una instancia de la clase MannedSpacecraft.

@@ -15,7 +15,7 @@ import java.util.Calendar;
  */
 public class ArtificialSatellite extends Spacecraft implements IUnmannedSpacecraft {
 
-    public double orbitalHeight;
+    protected double orbitalHeight;
 
     /**
      * Constructor: permite crear una instancia de la clase ArtificialSatelitte.

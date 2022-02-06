@@ -15,9 +15,9 @@ import java.util.Calendar;
  */
 public class LaunchVehicle extends Spacecraft{
 
-    public String fuel;
-    public float payloadCapacity;
-    public boolean reusable;
+    protected String fuel;
+    protected float payloadCapacity;
+    protected boolean reusable;
         
     /**
      * Constructor: permite crear una instancia de la clase LaunchVehicle.

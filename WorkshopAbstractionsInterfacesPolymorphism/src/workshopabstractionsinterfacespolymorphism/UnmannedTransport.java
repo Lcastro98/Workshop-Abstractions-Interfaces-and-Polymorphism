@@ -15,7 +15,7 @@ import java.util.Calendar;
  */
 public class UnmannedTransport extends Spacecraft implements IUnmannedSpacecraft {
     
-    public float loadCapacity;
+    protected float loadCapacity;
 
     /**
      * Constructor: permite crear una instancia de la clase UnmannedTransport.

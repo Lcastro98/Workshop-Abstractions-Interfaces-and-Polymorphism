@@ -15,7 +15,7 @@ import java.util.Calendar;
  */
 public class SpaceProbe extends Spacecraft implements IUnmannedSpacecraft{
     
-    public float cameraResolution;
+    protected float cameraResolution;
 
     /**
      * Constructor: permite crear una instancia de la clase SpaceProbe.
