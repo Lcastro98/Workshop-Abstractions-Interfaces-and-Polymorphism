@@ -12,33 +12,36 @@ import java.util.Calendar;
  */
 public class ArtificialSatellite extends Spacecraft implements IUnmannedSpacecraft {
 
-    public ArtificialSatellite(String name, Calendar launchDate, float weight, float size, String propeller, float speed, boolean activated, String location) {
-        super(name, launchDate, weight, size, propeller, speed, activated, location);
+    public double orbitalHeight;
+
+    public ArtificialSatellite(double orbitalHeight, String name, Calendar launchDate, float weight, float size, String propeller, boolean activated, String location) {
+        super(name, launchDate, weight, size, propeller, activated, location);
+        this.orbitalHeight = orbitalHeight;
+    }
+    
+    public String getInfo(){
+        return "La información ha sido recibida";
     }
 
     @Override
-    public boolean isActivated() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void start() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void launch() {
+        speed = speed + 1;
     }
 
     @Override
     public void stop() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        speed = 0;
     }
 
     @Override
-    public void sendInfo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String sendInfo(String send) {
+        send = "La información ha sido enviada";
+        return send;
     }
 
     @Override
-    public void defineRoute() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String defineRoute(String destination) {
+        return destination;
     }
     
 }

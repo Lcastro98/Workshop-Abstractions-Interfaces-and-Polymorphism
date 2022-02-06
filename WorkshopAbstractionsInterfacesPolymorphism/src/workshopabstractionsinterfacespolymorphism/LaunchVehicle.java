@@ -13,37 +13,28 @@ import java.util.Calendar;
 public class LaunchVehicle extends Spacecraft{
 
     public String fuel;
-    public String power;
     public float payloadCapacity;
     public boolean reusable;
 
-    public LaunchVehicle(String fuel, float payloadCapacity, boolean reusable, String name, Calendar launchDate, float weight, float size, String propeller, float speed, boolean activated, String location) {
-        super(name, launchDate, weight, size, propeller, speed, activated, location);
+    public LaunchVehicle(String fuel, float payloadCapacity, boolean reusable, String name, Calendar launchDate, float weight, float size, String propeller, boolean activated, String location) {
+        super(name, launchDate, weight, size, propeller, activated, location);
         this.fuel = fuel;
         this.payloadCapacity = payloadCapacity;
         this.reusable = reusable;
     }
-
-
     
-    public void uncoupling() {
-    
-    }
-    
-    
-    @Override
-    public boolean isActivated() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String uncopling(){
+        return "El vehiculo lanzadera se ha desacoplado satisfactoriamente de la carga útil";
     }
 
     @Override
-    public void start() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void launch() {
+        speed = speed + 1;
     }
 
     @Override
     public void stop() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        speed = 0;
     }
     
 }

@@ -10,6 +10,6 @@ package workshopabstractionsinterfacespolymorphism;
  */
 public interface IUnmannedSpacecraft {
     
-    public void sendInfo();
-    public void defineRoute();
+    public String sendInfo(String send);
+    public String defineRoute(String destination);
 }

@@ -14,21 +14,16 @@ public class MannedSpacecraft extends Spacecraft {
     
     public int crewCapacity;
 
-    public MannedSpacecraft(int crewCapacity, String name, Calendar launchDate, float weight, float size, String propeller, float speed, boolean activated, String location) {
-        super(name, launchDate, weight, size, propeller, speed, activated, location);
+    public MannedSpacecraft(int crewCapacity, String name, Calendar launchDate, float weight, float size, String propeller, boolean activated, String location) {
+        super(name, launchDate, weight, size, propeller, activated, location);
         this.crewCapacity = crewCapacity;
     }
 
     public void desactivateAutopilot(){
     }
-    
-    @Override
-    public boolean isActivated() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     @Override
-    public void start() {
+    public void launch() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -36,6 +31,6 @@ public class MannedSpacecraft extends Spacecraft {
     public void stop() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
-    
+
+
 }

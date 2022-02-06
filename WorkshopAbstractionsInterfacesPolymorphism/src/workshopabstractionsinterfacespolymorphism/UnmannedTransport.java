@@ -11,37 +11,40 @@ import java.util.Calendar;
  * @author lcast
  */
 public class UnmannedTransport extends Spacecraft implements IUnmannedSpacecraft {
-
-    public UnmannedTransport(String name, Calendar launchDate, float weight, float size, String propeller, float speed, boolean activated, String location) {
-        super(name, launchDate, weight, size, propeller, speed, activated, location);
-    }
-
-    public void coupling(){
-    }
     
-    @Override
-    public boolean isActivated() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public float loadCapacity;
+
+    public UnmannedTransport(float loadCapacity, String name, Calendar launchDate, float weight, float size, String propeller, boolean activated, String location) {
+        super(name, launchDate, weight, size, propeller, activated, location);
+        this.loadCapacity = loadCapacity;
+    }
+
+    public String coupling(){
+        return "El acoplamiento de la nave ha sido exitoso";
     }
 
     @Override
-    public void start() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void launch() {
+        speed = speed + 1;
     }
 
     @Override
     public void stop() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        speed = 0;
     }
 
     @Override
-    public void sendInfo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String sendInfo(String send) {
+        send = "La carga se ha entregado satisfactorimente";
+        return send;
     }
 
     @Override
-    public void defineRoute() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String defineRoute(String destination) {
+        return destination;
     }
+
+
+
     
 }

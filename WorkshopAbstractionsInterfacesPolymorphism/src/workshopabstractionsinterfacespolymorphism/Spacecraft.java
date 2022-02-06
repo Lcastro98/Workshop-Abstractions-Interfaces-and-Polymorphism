@@ -21,18 +21,20 @@ public abstract class Spacecraft {
     public boolean activated;
     public String location;
 
-    public Spacecraft(String name, Calendar launchDate, float weight, float size, String propeller, float speed, boolean activated, String location) {
+    public Spacecraft(String name, Calendar launchDate, float weight, float size, String propeller, boolean activated, String location) {
         this.name = name;
         this.launchDate = launchDate;
         this.weight = weight;
         this.size = size;
         this.propeller = propeller;
-        this.speed = speed;
+        this.speed = 0;
         this.activated = activated;
         this.location = location;
     }
 
-    public abstract boolean isActivated();
-    public abstract void start();
+    public boolean isActivated() {
+        return activated;
+    }
+    public abstract void launch();
     public abstract void stop();
 }
