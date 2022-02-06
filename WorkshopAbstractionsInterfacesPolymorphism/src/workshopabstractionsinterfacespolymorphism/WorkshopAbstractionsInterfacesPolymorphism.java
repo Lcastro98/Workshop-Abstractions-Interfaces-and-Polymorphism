@@ -4,6 +4,7 @@
  */
 package workshopabstractionsinterfacespolymorphism;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
@@ -16,7 +17,7 @@ public class WorkshopAbstractionsInterfacesPolymorphism {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         
         ArrayList<Spacecraft> SpacecraftList = new ArrayList<>();
         int add;

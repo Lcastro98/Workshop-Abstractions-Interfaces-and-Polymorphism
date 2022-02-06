@@ -4,6 +4,8 @@
  */
 package workshopabstractionsinterfacespolymorphism;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
@@ -39,6 +41,8 @@ public class LaunchVehicle extends Spacecraft{
     
     @Override
     public String toString() {
-        return "Información de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + launchDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nCombustible: " + fuel + "\nCapacidad de carga útil: " + payloadCapacity + "\n¿Es reusable?: " + (reusable==true?"Sí":"No") +"\n";
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
+        String strDate = dateFormat.format(launchDate.getTime());
+        return "Información de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + strDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nCombustible: " + fuel + "\nCapacidad de carga útil: " + payloadCapacity + "\n¿Es reusable?: " + (reusable==true?"Sí":"No") +"\n";
     }
 }

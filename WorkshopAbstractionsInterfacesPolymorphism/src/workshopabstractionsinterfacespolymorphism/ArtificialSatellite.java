@@ -4,6 +4,8 @@
  */
 package workshopabstractionsinterfacespolymorphism;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
@@ -45,8 +47,10 @@ public class ArtificialSatellite extends Spacecraft implements IUnmannedSpacecra
     }
 
     @Override
-    public String toString() {
-        return "Información de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + launchDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nAltura orbital: " + orbitalHeight + "\n";
+    public String toString() { 
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
+        String strDate = dateFormat.format(launchDate.getTime());  
+        return "Información de la nave:\nNombre: " + name + "\nFecha de lanzamiento: " + strDate + "\nPeso: " + weight + "\nTamaño: " + size + "\nSistema de propulsión: " + propeller + "\nVelocidad: " + speed + "\n¿Está activa?: " + (activated==true?"Sí":"No") + "\nUbicación:" + location + "\nAltura orbital: " + orbitalHeight + "\n";
     }
 
 }
